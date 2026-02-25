@@ -1,56 +1,116 @@
 <script>
     let hp_boss = 300;
+    let hp_heroi = 200;
     let mana_Heroi = 100;
     let mana_Gasta_Total = 0;
     let acao;
+    let acao_Boss;
+    let dano_Boss = 25;
+    let dano_Boss_Skill = 40;
+    let dano_Boss_Ultimate = 80;
+    let mana_Boss = 200;
+    let mana_Boss_Gasta_Total = 0;
+    
 
-    console.log("O Chefe surgiu: 300hp")
+    alert("O Chefe surgiu: 300hp")
     for (let turno = 1; turno <=15; turno++) {
         if (hp_boss <= 0) {
-            console.log("O Boss foi Derrotado!");
+            alert("O Boss foi Derrotado!");
             break;
         } 
-        acao = Math.floor(Math.random() * 3) + 1;
-        console.log("Ação" + acao);
+         //Math.floor(Math.random() * 3) + 1;
+        
+        let menu = "Escolha sua ação: \n"
+
+                 + " 1 - ataque básico \n"
+                 + " 2 - skill \n"
+                 + " 3 - ultimate \n";
+        let escolha = prompt(menu);
+        let acao = parseInt(escolha);
+
+        alert("Ação" + acao);
         switch(acao) {
             case 1:
-                console.log("Ataque Básico. 20 dano");
+                alert("Ataque Básico: 20 dano");
                 //hp_boss = hp_boss -20
                 hp_boss -= 20;
                 break;
             
             case 2:
                 if (mana_Heroi >= 30){
-                    console.log("Skill. 50 dano");
+                    alert("Skill: 50 dano");
                     hp_boss -= 50;
                     mana_Heroi -= 30;
                     mana_Gasta_Total += 30;
                 }
                 else{
-                    console.log("Mana insulficiente!");
+                    alert("Mana insulficiente!");
                 }
                 break;
             
             case 3:
                 if(mana_Gasta_Total >= 50){
-                    console.log("Ultimate. 150 dano");
+                    alert("Ultimate: 150 dano");
                     hp_boss -= 150; 
                     mana_Gasta_Total = 0;
                 }
                 else{
-                    console.log("Ultimate não carregada!");
+                    alert("Ultimate não carregada!");
                 }
                 break;
         }
-        console.log(" HP Boss: " + hp_boss + " Mana: " + mana_Heroi);
-        
+
+        acao_Boss = Math.floor(Math.random() * 3) + 1;
+
+        mana_Heroi += 10;
+        alert(" HP Boss: " + hp_boss + " Mana: " + mana_Heroi);
+
+        alert("Ação boss: ataque: 25 dano" + acao_Boss);
+        switch(acao) {
+            case 1:
+                alert("Ataque Básico: 20 dano");
+                //hp_boss = hp_boss -20
+                hp_heroi -= 20;
+                break;
+            
+            case 2:
+                if (mana_Boss >= 30){
+                    alert("Skill: 50 dano");
+                    hp_heroi -= 50;
+                    mana_Boss -= 30;
+                    mana_Boss_Gasta_Total += 30;
+                }
+                else{
+                    alert("Mana insulficiente!");
+                }
+                break;
+            
+            case 3:
+                if(mana_Boss_Gasta_Total >= 50){
+                    alert("Ultimate: 150 dano");
+                    hp_heroi -= 150; 
+                    mana_Boss_Gasta_Total = 0;
+                }
+                else{
+                    alert("Ultimate não carregada!");
+                }
+                break;
+        }
+
+            alert(" HP Heroi: " + hp_heroi + " Mana Boss: " + mana_Boss);
+    
+            if(hp_heroi <= 0){
+                alert("Derrota! O Boss derrotou você! O reino está perdido!");
+                break;
+            }
+
 
     }
 
     if(hp_boss <= 0){
-         console.log("Vitória");
+         alert("Vitória! Você salvou o reino!");
     }
     else{
-        console.log("Missão falhou! O Boss continua vivo");
+        alert("Missão falhou! O Boss continua vivo! Você precisa derrotá-lo para salvar o reino!");
     }
 </script>
