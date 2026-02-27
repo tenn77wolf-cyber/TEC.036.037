@@ -1,0 +1,15 @@
+<script>
+    function calculadoraMedia (nota1, nota2, nota3) {
+        let media = (nota1 + nota2 + nota3) / 3;
+        return media;
+    }
+    let msg = "Digite a primeira nota: ";
+    let nota1 = parseFloat(prompt(msg));
+    msg = "Digite a segunda nota: ";
+    let nota2 = parseFloat(prompt(msg));
+    msg = "Digite a terceira nota: ";
+    let nota3 = parseFloat(prompt(msg));
+    let mediaCalculada = calculadoraMedia(nota1, nota2, nota3);
+    alert("A média calculada é: " + mediaCalculada.toFixed(2));
+    
+</script>
