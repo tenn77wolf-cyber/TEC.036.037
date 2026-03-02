@@ -1,0 +1,12 @@
+<script>
+    var numeros = ["10", "25", "5", "30", "15"];
+    var maiorNumero = parseInt(numeros[0]);
+    for (var i = 1; i < numeros.length; i++) {
+        var numeroAtual = parseInt(numeros[i]);
+        if (numeroAtual > maiorNumero) {
+            maiorNumero = numeroAtual;
+        }
+         prompt("Digite um número:");
+    }
+    alert("O maior número é: " + maiorNumero);
+</script>
