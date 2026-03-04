@@ -1,0 +1,20 @@
+<script>
+    convidados = new Set([
+        "Maria",
+        "João",
+        "Ana",
+        "Carlos",
+        "Maria",
+        "João"
+    ]);
+    alert(Array.from(convidados));
+    convidados.add("Fernanda");
+    convidados.add("Catarina");
+    alert(Array.from(convidados));
+
+    if (convidados.has("Ana")) {
+        alert("Ana está na lista de convidados.");
+    } else {
+        alert("Ana não está na lista de convidados.");
+    }
+</script>
