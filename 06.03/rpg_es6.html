@@ -1,0 +1,48 @@
+<script>
+    let hero = {
+        name: "Aragorn",
+        hp: 800,
+        mp: 300,
+        energia: 800
+    };
+    let boss = {
+        name: "Sauron",
+        hp: 2000,
+        ataque_fixo: 100
+    };
+    let skills_hero = [
+        {id:1, nome:"Flecha de Fogo", dano: 95, custo: 0, energia: 0},
+        {id:2, nome:"Espada Flamejante", dano: 85, custo: 10, energia: 20},
+        {id:3, nome:"Grito de Batalha", dano: 75, custo: 5, energia: 10},
+        {id:4, nome:"Investida Selvagem", dano: 90, custo: 15, energia: 30},
+        {id:5, nome:"Lâmina do caos", dano: 150, custo: 20, energia: 40}
+    ];
+
+    let skill_boss = [
+        {id:1, nome:"Sombra Devastadora", dano: 100, custo: 0, energia: 0},
+        {id:2, nome:"Chama Negra", dano: 150, custo: 20, energia: 50},
+        {id:3, nome:"Garras do Abismo", dano: 80, custo: 10, energia: 30},
+        {id:4, nome:"Olhar Penetrante", dano: 90, custo: 15, energia: 40}
+    ];
+    const atacarBoss = (tipoAtaque) => {
+        const habilidade = skill.find(s => s.id === escolhaId);
+        if (hero.mp >= habilidade.custo
+            && hero.energia >= habilidade.energia) {
+            boss.hp -= habilidade.dano;
+            hero.mp -= habilidade.custo;
+            hero.energia += habilidade.custo;
+            alert(`${hero.name} usou ${habilidade.nome}! 
+            Causou ${habilidade.dano} de dano!`);
+        } 
+        hero.hp -= boss.ataque_fixo;
+        
+        alert(`***STATUS*** \n 
+            Boss: ${boss.hp} HP \n | Hero: ${hero.hp} `)
+    }
+    while (boss.hp >=0 && hero.hp >= 0) {
+        msg = "Escolha um ataque: " +
+           "1. flecha de fogo | 2. espada flamejante | 3. grito de batalha | 4. investida selvagem | 5. lâmina do caos";
+        let escolhaId = parseInt(prompt(msg));
+        atacarBoss(escolha); 
+    }
+</script>
