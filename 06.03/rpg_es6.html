@@ -25,7 +25,7 @@
         {id:4, nome:"Olhar Penetrante", dano: 90, custo: 15, energia: 40}
     ];
     const atacarBoss = (tipoAtaque) => {
-        const habilidade = skill.find(s => s.id === escolhaId);
+        const habilidade = skill_boss.find(s => s.id === tipoAtaque);
         if (hero.mp >= habilidade.custo
             && hero.energia >= habilidade.energia) {
             boss.hp -= habilidade.dano;
@@ -35,7 +35,7 @@
             Causou ${habilidade.dano} de dano!`);
         } 
         hero.hp -= boss.ataque_fixo;
-        
+
         alert(`***STATUS*** \n 
             Boss: ${boss.hp} HP \n | Hero: ${hero.hp} `)
     }
@@ -43,6 +43,6 @@
         msg = "Escolha um ataque: " +
            "1. flecha de fogo | 2. espada flamejante | 3. grito de batalha | 4. investida selvagem | 5. lâmina do caos";
         let escolhaId = parseInt(prompt(msg));
-        atacarBoss(escolha); 
+        atacarBoss(escolhaId); 
     }
 </script>
