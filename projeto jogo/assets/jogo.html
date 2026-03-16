@@ -5,40 +5,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        #col-heroi,
+        #col-boss {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+    </style>
+
+</html>
 
 <body>
     <div class="container">
-        <div class="row">
-            <div class="col text-end" id="col-heroi">
-                <div id="nome-heroi">Aragorn☠️</div>
-                    <progress id="hp-heroi" value="800" max="800" 
-                        style="accent-color: rgb(118, 2, 2);"></progress>❤️
-                    <progress id="mp-heroi" value="300" max="300" 
-                        style="accent-color: rgb(53, 53, 97);"></progress>🔮
-                    <progress id="energia-heroi" value="800" max="800" 
-                        style="accent-color: rgb(255, 242, 0);"></progress>⚡
-                            <video loop autoplay src="assets/l6jf3f2zx41d1.mp4" width="200" height="200"></video>
-            </div>
-            <div class="col text-end" id="col-boss">
-                <div id="nome-boss">Sauron⚔️</div>
-                    <progress id="hp-boss" value="800" max="800" 
-                        style="accent-color: rgb(45, 2, 2);"></progress>❤️
-                    <progress id="mp-boss" value="300" max="300" 
-                        style="accent-color: rgb(198, 0, 40);"></progress>🔮
-                          <video loop autoplay src="assets/hei8mcp9n77c1.mp4" width="200" height="200"></video>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col" id="col-botoes">
+        <div class="card text-center">
+            <div class="card-header">Centauros</div>
+            <div class="card-body" id="tela"
+                style="background-image: url('assets/floresta.gif'); background-size: cover; background-position: center; height: 80vh;">
+
+                <p class="card-text"> Turno 1 </p>
+                <div class="row justify-content-center">
+                    <div class="col-3 text-center" id="col-heroi">
+                        <ul class="list-group float-end" style="width: 225px;">
+                            <li id="nome-heroi" class="list-group-item">Guts</li>
+                            <li id="titulo-heroi" class="list-group-item">Berserck⚔️</li>
+                            <li id="hp-heroi" class="list-group-item">❤️<progress id="hp-heroi" value="950" max="950"
+                                    style="accent-color: rgb(255, 0, 0);"></progress></li>
+                            <li id="sanidade-heroi" class="list-group-item">☠️<progress id="sanidade-heroi" value="300" max="300"
+                                    style="accent-color: rgb(8, 8, 100);"></progress></li>
+                            <li id="energia-heroi" class="list-group-item">⚡<progress id="energia-heroi" value="800"
+                                    max="800" style="accent-color: rgb(255, 242, 0);"></progress></li>
+                        </ul>
+                        <img src="assets/Guts.gif" width="200" height="200">
+                        <div class="btn-group" id="controles">
+                            <button class="btn btn-primary">Atacar</button>
+                            <button class="btn btn-secondary">Skill</button>
+                            <button class="btn btn-success">Armadura</button>
+                        </div>
+                </div>
+
+                <div class="col-3 text-center" id="col-boss">
+                    <ul class="list-group float-start" style="width: 225px;">
+                        <li id="nome-boss" class="list-group-item">Griffith</li>
+                        <li id="titulo-boss" class="list-group-item">Falcão☠️</li>
+                        <li id="hp-boss" class="list-group-item">❤️<progress id="hp-boss" value="1200" max="1200"
+                                style="accent-color: rgb(0, 0, 0);"></progress></li>
+                        <li id="energia-boss" class="list-group-item">⚡<progress id="energia-boss" value="1000"
+                                max="1000" style="accent-color: rgb(244, 248, 0);"></progress></li>
+                    </ul>
+                    <img src="assets/Falcão.gif" width="230" height="280">
+                </div>
 
             </div>
-            <div class="col" id="col-msg">
+            <div class="row">
+                <div class="col" id="col-botoes">
+                </div>
+                <div class="col" id="col-msg">
 
+                </div>
             </div>
+
         </div>
+        <div class="card-footer">
+        </div>
+    </div>
     </div>
 </body>
 
