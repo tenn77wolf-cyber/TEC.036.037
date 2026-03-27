@@ -15,6 +15,10 @@
             justify-content: center;
             text-align: center;
         }
+
+        #controles {
+            font-size: small;
+        }
     </style>
 
 </html>
@@ -26,7 +30,7 @@
             <div class="card-body" id="tela"
                 style="background-image: url('assets/floresta.gif'); background-size: cover; background-position: center; height: 80vh;">
 
-                <p class="card-text"> Turno 1 </p>
+                <p class="card-text">  `<div class="alert alert-danger" role="alert">Mão de Deus</div> </p>
                 <div class="row justify-content-center">
                     <div class="col-3 text-center" id="col-heroi">
                         <ul class="list-group float-end" style="width: 225px;">
@@ -36,41 +40,48 @@
                                     style="accent-color: rgb(255, 0, 0);"></progress></li>
                             <li id="" class="list-group-item">☠️<progress id="sanidade-heroi" value="500" max="500"
                                     style="accent-color: rgb(8, 8, 100);"></progress></li>
-                            <li id="" class="list-group-item">⚡<progress id="energia-heroi" value="800"max="800" 
+                            <li id="" class="list-group-item">⚡<progress id="energia-heroi" value="800" max="800"
                                     style="accent-color: rgb(255, 242, 0);"></progress></li>
                         </ul>
                         <img src="assets/Guts.gif" width="200" height="200">
                         <div class="btn-group" id="controles">
 
                         </div>
-                </div>
+                    </div>
 
-                <div class="col-3 text-center" id="col-boss">
-                    <ul class="list-group float-start" style="width: 225px;">
-                        <li id="nome-boss" class="list-group-item"></li>
-                        <li id="titulo-boss" class="list-group-item"></li>
-                        <li id="hp-boss" class="list-group-item">❤️<progress id="hp-boss" value="1200" max="1200"
-                                style="accent-color: rgb(116, 4, 4);"></progress></li>
-                        <li id="energia-boss" class="list-group-item">⚡<progress id="energia-boss" value="1000"max="1000" 
-                                style="accent-color: rgb(244, 248, 0);"></progress></li>
-                    </ul>
-                    <img src="assets/Falcão.gif" width="200" height="240">
-                </div>
+                    <div class="col-3 text-center" id="col-boss">
+                        <ul class="list-group float-start" style="width: 225px;">
+                            <li id="nome-boss" class="list-group-item"></li>
+                            <li id="titulo-boss" class="list-group-item"></li>
+                            <li class="list-group-item">❤️<progress id="hp-boss" value="1200" max="1200"
+                                    style="accent-color: rgb(116, 4, 4);"></progress></li>
+                            <li class="list-group-item">⚡<progress id="energia-boss" value="0" max="1000"
+                                    style="accent-color: rgb(244, 248, 0);"></progress></li>
+                        </ul>
+                        <img src="assets/Falcão.gif" width="200" height="240">
+                    </div>
 
+                    <div class="card-footer">
+                        <p><small class="text-muted" id=log-Guts>
+                            </small></p>
+                        <p></p>
+                        <P><small class="text-muted" id="log-Griffith">
+                            </small></P>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col" id="col-botoes">
+                    </div>
+                    <div class="col" id="col-msg">
+
+                    </div>
+                </div>
             </div>
-            <div class="row">
-                <div class="col" id="col-botoes">
-                </div>
-                <div class="col" id="col-msg">
-
-                </div>
+            <div class="card-footer" id="msg-turno">
             </div>
-
         </div>
-        <div class="card-footer">
-        </div>
-    </div>
     </div>
 </body>
 <script src="jogo.js"></script>
+
 </html>
